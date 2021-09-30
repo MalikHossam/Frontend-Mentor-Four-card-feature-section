@@ -1,0 +1,179 @@
+/* ###################### VARIABLES ####################### */
+:root {
+	--mainFont: "Poppins", sans-serif;
+	--backColor: hsl(0, 0%, 98%);
+	--headerColor: hsl(234, 12%, 34%);
+	--textColor: hsl(229, 6%, 66%);
+	--teamColor: hsl(0, 78%, 62%);
+	--superColor: hsl(180, 62%, 55%);
+	--karmaColor: hsl(34, 97%, 64%);
+	--calcColor: hsl(212, 86%, 64%);
+}
+
+/* ###################### POSITION #######################  */
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body,
+html {
+	min-height: 100vh;
+	font-family: var(--mainFont);
+	font-size: 15px;
+	color: var(--textColor);
+}
+main {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow: auto;
+}
+.container {
+	margin: 4rem 1.5rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	text-align: center;
+	justify-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+/* ######################### TEXT ########################### */
+
+header {
+	margin-bottom: 4rem;
+}
+
+h1,
+p.title {
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-align: left;
+}
+
+.brief {
+	margin-top: 1rem;
+}
+
+h3,
+h1 {
+	color: var(--headerColor);
+	font-weight: bold;
+}
+/* ############################ CARDS ####################### */
+
+section {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column wrap;
+	flex-flow: column wrap;
+	text-align: left;
+}
+
+.card {
+	padding: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 5px 0px hsl(0deg 0% 0% / 25%);
+	box-shadow: 0px 10px 5px 0px hsl(0deg 0% 0% / 25%);
+	border-top: 5px solid;
+}
+.card figure {
+	height: 9vh;
+}
+
+.card1 {
+	border-color: var(--superColor);
+}
+.card1 figure {
+	background: no-repeat right url(icon-supervisor.svg);
+}
+
+.card2 {
+	border-color: var(--teamColor);
+}
+.card2 figure {
+	background: no-repeat right url(icon-team-builder.svg);
+}
+
+.card3 {
+	border-color: var(--karmaColor);
+}
+.card3 figure {
+	background: no-repeat right url(icon-karma.svg);
+}
+
+.card4 {
+	border-color: var(--calcColor);
+}
+.card4 figure {
+	background: no-repeat right url(icon-calculator.svg);
+}
+
+.job {
+	padding: 1rem 0 2rem 0;
+}
+
+/* ########################### BIGGER SCREENS ###################### */
+
+@media (min-width: 768px) {
+	header {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	h1,
+	p.title {
+		font-size: 2.5rem;
+	}
+
+	section {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		gap: 2rem 0;
+		margin-bottom: 2rem;
+	}
+	.card {
+		width: 80%;
+		margin-bottom: 0;
+	}
+
+	.card1 {
+		grid-area: 1 / 1 / 3 / 2;
+		justify-self: flex-end;
+	}
+	.card2 {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.card3 {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+	.card4 {
+		grid-area: 1 / 3 / 3 / 4;
+		justify-self: flex-start;
+	}
+}
